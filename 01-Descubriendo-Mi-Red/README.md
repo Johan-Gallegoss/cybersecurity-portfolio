@@ -1,24 +1,24 @@
-# Proyecto 01: Descubriendo mi Red
+# Project 01: Discovering My Network
 
-## 📌 Descripción
-Este proyecto corresponde al primer laboratorio de fundamentos de redes en un entorno Kali Linux. El objetivo es comprender cómo se configura la red en un sistema operativo Linux y cómo se comunica con Internet.
-
----
-
-## 🎯 Objetivo
-Identificar y analizar la configuración básica de red del sistema, incluyendo:
-- Dirección IP
-- Puerta de enlace (Gateway)
-- Servidores DNS
-- Conectividad a Internet
-- Ruta de los paquetes hacia un destino externo
+## 📌 Description
+This project is the first networking fundamentals lab performed in a Kali Linux environment. The goal is to understand how network configuration works in a Linux system and how it communicates with the Internet.
 
 ---
 
-## 🛠️ Herramientas utilizadas
+## 🎯 Objective
+To identify and analyze the basic network configuration of the system, including:
+- IP address
+- Gateway
+- DNS servers
+- Internet connectivity
+- Packet routing to an external destination
+
+---
+
+## 🛠️ Tools used
 - Kali Linux
-- Terminal Linux
-- Comandos de red:
+- Linux Terminal
+- Network commands:
   - ip a
   - ip route
   - cat /etc/resolv.conf
@@ -27,38 +27,38 @@ Identificar y analizar la configuración básica de red del sistema, incluyendo:
 
 ---
 
-## 📡 Actividades realizadas
+## 📡 Activities performed
 
-### 1. Identificación de dirección IP
-Se utilizó el comando `ip a` para identificar la IP asignada a la máquina virtual dentro de una red privada (NAT).
+### 1. IP address identification
+The `ip a` command was used to identify the IP address assigned to the virtual machine within a private NAT network.
 
-### 2. Identificación de Gateway
-Se utilizó `ip route` para identificar la puerta de enlace utilizada para la salida a Internet.
+### 2. Gateway identification
+The `ip route` command was used to identify the default gateway used for external network access.
 
-### 3. Identificación de DNS
-Se revisó el archivo `/etc/resolv.conf` para identificar los servidores DNS configurados.
+### 3. DNS identification
+The `/etc/resolv.conf` file was checked to identify the configured DNS servers.
 
-### 4. Verificación de conectividad
-Se utilizó `ping google.com` para comprobar la conectividad hacia Internet mediante ICMP.
+### 4. Connectivity test
+The `ping google.com` command was used to verify Internet connectivity using the ICMP protocol.
 
-### 5. Análisis de ruta de red
-Se utilizó `traceroute google.com` para observar los saltos que realizan los paquetes hasta llegar al destino.
-
----
-
-## 📸 Evidencias
-Todas las capturas del laboratorio se encuentran en la carpeta `/capturas`.
+### 5. Network route analysis
+The `traceroute google.com` command was used to observe the different hops packets take to reach the destination.
 
 ---
 
-## 🧠 Conocimientos adquiridos
-- Concepto de IP privada y redes NAT
-- Función del gateway como puerta de salida
-- Resolución de nombres mediante DNS
-- Verificación de conectividad con ICMP
-- Análisis de rutas de red con traceroute
+## 📸 Evidence
+All screenshots for this lab are stored in the `/capturas` folder.
 
 ---
 
-## 📌 Conclusión
-Este laboratorio permitió comprender los fundamentos de comunicación en redes, identificando cómo un sistema Linux interactúa con redes internas y externas a través de NAT. Además, se reforzaron conceptos esenciales para análisis de tráfico y diagnóstico de conectividad, base fundamental para roles de ciberseguridad como SOC Analyst. 
+## 🧠 Knowledge gained
+- Understanding of private IP addressing and NAT networks
+- Role of the gateway as an exit point to external networks
+- DNS name resolution process
+- Network connectivity verification using ICMP
+- Route analysis using traceroute
+
+---
+
+## 📌 Conclusion
+This lab provided a clear understanding of basic network communication in a Linux environment. It demonstrated how a system interacts with internal and external networks through NAT. These concepts are fundamental for cybersecurity roles such as SOC Analyst.
