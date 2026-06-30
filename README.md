@@ -2,9 +2,7 @@
 
 Welcome to my Cybersecurity Portfolio.
 
-This repository documents my hands-on learning journey in cybersecurity through practical labs, technical documentation, and real-world scenarios. My objective is to continuously develop the knowledge and skills required to work in cybersecurity, while building a portfolio that demonstrates both technical and analytical capabilities.
-
-Rather than focusing on a single specialization, this portfolio covers multiple areas commonly found in entry-level cybersecurity positions, including security operations, networking, system administration, vulnerability management, security monitoring, and security governance.
+This repository documents my hands-on cybersecurity learning journey through practical labs, technical documentation, and real-world scenarios. My goal is to continuously develop the technical skills required to work in cybersecurity while building a portfolio that reflects practical knowledge and continuous improvement.
 
 ---
 
@@ -12,200 +10,75 @@ Rather than focusing on a single specialization, this portfolio covers multiple 
 
 I'm currently studying Computer Engineering with a specialization in Software Development.
 
-My interest is focused on defensive cybersecurity, infrastructure, networks, and information security. I enjoy understanding how systems work, identifying security risks, and learning how organizations protect their digital assets.
-
-This repository represents my continuous learning process through practical exercises, documentation, and technical analysis.
+My interests include cybersecurity, networking, system administration, infrastructure, cloud technologies, and information security. This portfolio showcases my learning process through hands-on labs and technical documentation.
 
 ---
 
 # 🎯 Objectives
 
-- Develop practical cybersecurity skills through hands-on labs.
-- Strengthen networking and operating system fundamentals.
-- Learn industry tools used by security professionals.
-- Document every lab using professional technical reports.
-- Build a portfolio that reflects continuous improvement.
+- Build practical cybersecurity skills through hands-on labs.
+- Strengthen networking, Linux, Windows, and cloud fundamentals.
+- Learn industry-standard security tools and best practices.
+- Document every project with technical reports and evidence.
 - Prepare for entry-level cybersecurity positions.
 
 ---
 
-# 📚 Learning Areas
+# 🧰 Technical Areas
 
-## 🌐 Networking
-
-- TCP/IP
-- Routing
-- Switching
-- DNS
-- DHCP
-- HTTP / HTTPS
-- SMTP
-- ICMP
-- Network troubleshooting
-
----
-
-## 🐧 Linux Administration
-
-- Linux fundamentals
-- File system
-- Permissions
-- Users & Groups
-- Networking
-- Shell commands
-- Process management
+| Area | Topics |
+|------|--------|
+| 🌐 Networking | TCP/IP, DNS, HTTP/HTTPS, ICMP, Routing |
+| 🐧 Linux | Commands, Users, Permissions, Networking |
+| 🪟 Windows | Event Viewer, Services, Defender, Security |
+| 🔍 Traffic Analysis | Wireshark, Packet Analysis, DNS, TCP |
+| 🛡️ Security Monitoring | SIEM Concepts, Wazuh, Log Analysis |
+| 🚨 Incident Response | Investigation, Documentation, Evidence Collection |
+| 📋 Vulnerability Management | Nmap, Vulnerability Assessment, Hardening |
+| 🔐 Identity & Access Management | Authentication, Authorization, Least Privilege |
+| 🏢 Security Governance | ISO 27001, NIST CSF, Risk Management |
+| ☁️ Cloud Security | AWS Fundamentals, IAM, VPC |
+| 💻 Secure Development | OWASP Top 10, Spring Boot Security |
 
 ---
 
-## 🪟 Windows Administration
+# 📂 Portfolio Projects
 
-- Windows security
-- Event Viewer
-- Services
-- Users
-- NTFS permissions
-- Windows Defender
-
----
-
-## 🔍 Traffic Analysis
-
-- Wireshark
-- Packet analysis
-- TCP analysis
-- DNS investigation
-- HTTP inspection
-- Network troubleshooting
-
----
-
-## 🛡️ Security Monitoring
-
-- SIEM concepts
-- Wazuh
-- Security events
-- Log analysis
-- Alert investigation
-- Detection concepts
-
----
-
-## 🚨 Incident Response
-
-- Event triage
-- Incident documentation
-- Initial investigation
-- Evidence collection
-- Root cause analysis
-
----
-
-## 🔐 Identity & Access Management
-
-- Authentication
-- Authorization
-- Least privilege
-- Password policies
-- Access control
-
----
-
-## 📋 Vulnerability Management
-
-- Nmap
-- Vulnerability scanning
-- Risk assessment
-- Remediation concepts
-- Hardening
-
----
-
-## 🏢 Security Governance
-
-- ISO 27001
-- NIST Cybersecurity Framework
-- Security policies
-- Risk management
-- Compliance concepts
-
----
-
-## ☁️ Cloud Security
-
-- AWS fundamentals
-- IAM
-- VPC
-- EC2
-- Cloud security concepts
-
----
-
-## 💻 Secure Development
-
-- OWASP Top 10
-- Secure coding concepts
-- Spring Boot Security
-- REST API Security
-
----
-
-# 📂 Repository Structure
-
-Each lab includes:
+Each project includes:
 
 - Objective
 - Environment
 - Step-by-step procedure
 - Commands used
 - Screenshots
-- Technical explanation
+- Technical documentation
 - Findings
 - Conclusions
-- Skills demonstrated
 
 ---
 
-# 🚀 Current Roadmap
+# 📈 Learning Roadmap
 
 ## Foundations
-
 - [ ] Networking Fundamentals
 - [ ] Linux Fundamentals
 - [ ] Windows Fundamentals
 
-## Network Analysis
-
+## Security Operations
 - [ ] Wireshark
-- [ ] TCP/IP Analysis
-- [ ] DNS Investigation
-
-## Enumeration
-
-- [ ] Nmap
-- [ ] Service Enumeration
-- [ ] Network Discovery
-
-## System Security
-
+- [ ] Network Analysis
 - [ ] Windows Event Viewer
 - [ ] Sysmon
-- [ ] Windows Hardening
-
-## Security Monitoring
-
 - [ ] Wazuh
-- [ ] SIEM Fundamentals
 - [ ] Log Analysis
 
-## Vulnerability Management
-
+## Security Assessment
+- [ ] Nmap
 - [ ] Vulnerability Assessment
-- [ ] Risk Prioritization
-- [ ] Remediation
+- [ ] Hardening
 
 ## Cloud
-
-- [ ] AWS Security
+- [ ] AWS Security Fundamentals
 - [ ] IAM
 - [ ] Cloud Monitoring
 
@@ -215,8 +88,7 @@ Each lab includes:
 
 - Windows
 - Linux
-- Git
-- GitHub
+- Git & GitHub
 - Wireshark
 - Nmap
 - Wazuh
@@ -231,16 +103,6 @@ Each lab includes:
 
 ---
 
-# 📖 Continuous Learning
-
-Cybersecurity is constantly evolving.
-
-This portfolio will continue growing as I acquire new skills, complete additional labs, and gain experience with new technologies and security concepts.
-
-Every project in this repository reflects my commitment to continuous learning, technical curiosity, and professional development.
-
----
-
 # 📫 Contact
 
 **Johan González**
@@ -249,6 +111,4 @@ Every project in this repository reflects my commitment to continuous learning, 
 
 📧 johangonzalezgallegos@gmail.com
 
-LinkedIn *(Coming Soon)*
-
-GitHub *(This Repository)*
+💻 GitHub *(This Repository)*
