@@ -2,172 +2,315 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de ciberseguridad, redes y GRC.">
-    <title>Cybersecurity Portfolio</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1120;
-            color: #e5edf8;
-        }
-
-        header {
-            padding: 24px 8%;
-            border-bottom: 1px solid #263449;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-        }
-
-        header strong {
-            color: #67e8f9;
-            letter-spacing: 1px;
-        }
-
-        main {
-            width: min(1050px, 88%);
-            margin: 70px auto;
-        }
-
-        .tag {
-            color: #67e8f9;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            margin: 18px 0;
-        }
-
-        h1 span {
-            color: #67e8f9;
-        }
-
-        .intro {
-            max-width: 650px;
-            color: #a9b8cc;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .section-title {
-            margin-top: 55px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 18px;
-            margin-top: 24px;
-        }
-
-        .card {
-            background: #111c30;
-            border: 1px solid #293950;
-            border-radius: 14px;
-            padding: 24px;
-            transition: transform .2s, border-color .2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: #67e8f9;
-        }
-
-        .card .number {
-            color: #67e8f9;
-            font-size: 13px;
-        }
-
-        .card p {
-            color: #a9b8cc;
-            line-height: 1.6;
-        }
-
-        .card a {
-            color: #67e8f9;
-            text-decoration: none;
-        }
-
-        .card a:hover {
-            text-decoration: underline;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 10px;
-            border-radius: 20px;
-            background: #183b40;
-            color: #8df4dc;
-            font-size: 12px;
-        }
-
-        footer {
-            border-top: 1px solid #263449;
-            padding: 25px 8%;
-            color: #8293aa;
-            font-size: 13px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de ciberseguridad, redes, análisis de tráfico y GRC de Johan González. Laboratorios prácticos e informes técnicos.">
+  <title>Johan González · Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <header>
-        <strong>CYBERSECURITY.PORTFOLIO</strong>
-        <span class="status">En desarrollo</span>
-    </header>
+  <!-- Header / Barra de Navegación -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="./index.html" class="brand">
+        <div class="brand-icon">🛡️</div>
+        <div class="brand-title">CYBERSECURITY<span>.PORTFOLIO</span></div>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#areas" class="nav-link">Áreas Técnicas</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li>
+            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <div class="tag">Portfolio · Redes · Seguridad · GRC</div>
+  <!-- Contenedor Principal -->
+  <main class="main-wrapper" id="inicio">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge-tag">
+        <span class="pulse-dot"></span>
+        <span>Portafolio Activo · Enfoque Blue Team &amp; GRC</span>
+      </div>
 
-        <h1>Security through<br><span>analysis &amp; control.</span></h1>
+      <h1>
+        Security through<br>
+        <span class="gradient-text">analysis, evidence &amp; control.</span>
+      </h1>
 
-        <p class="intro">
-            Portafolio práctico de ciberseguridad que reúne laboratorios
-            técnicos, análisis de riesgos, gestión de controles y auditoría
-            de seguridad de la información.
+      <p class="hero-subtitle">
+        Johan González · Estudiante de Ingeniería en Computación
+      </p>
+
+      <p class="hero-description">
+        Portafolio técnico práctico enfocado en fundamentos de redes, análisis de paquetes en tiempo real con Wireshark, diagnóstico en entornos Linux y gestión de controles de seguridad. Cada laboratorio cuenta con documentación estructurada, evidencias verificables en alta resolución e informes técnicos en PDF.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+          Explorar Proyectos
+        </a>
+        <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          Ver Código en GitHub ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- Barra de Métricas y Enfoque -->
+    <section class="highlight-strip">
+      <div class="stat-box">
+        <div class="stat-icon">📡</div>
+        <div class="stat-info">
+          <h4>Networking &amp; Linux</h4>
+          <p>Configuración, NAT, DNS y rutas</p>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">🦈</div>
+        <div class="stat-info">
+          <h4>Traffic Analysis</h4>
+          <p>Inspección forense con Wireshark</p>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📑</div>
+        <div class="stat-info">
+          <h4>Informes Técnicos</h4>
+          <p>Documentación formal en PDF</p>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📋</div>
+        <div class="stat-info">
+          <h4>GRC &amp; ISO 27001</h4>
+          <p>Riesgos y controles en desarrollo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos">
+      <div class="section-header">
+        <span class="section-label">Laboratorios &amp; Casos de Estudio</span>
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <p class="section-desc">
+          Entornos reproducibles con evidencia visual paso a paso, análisis técnico detallado y acceso directo a los informes descargables.
         </p>
+      </div>
 
-        <h2 class="section-title">Explorar proyectos</h2>
+      <div class="projects-grid">
+        <!-- Tarjeta 01: Descubriendo Mi Red -->
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-badge">PROYECTO 01</span>
+            <span class="status-badge completed">✓ Completado</span>
+          </div>
+          <div class="card-body">
+            <h3>Descubriendo Mi Red</h3>
+            <p>
+              Exploración práctica de fundamentos de networking en Kali Linux. Identificación de direccionamiento IP privado, configuración de gateway, resolución DNS y enrutamiento externo mediante ICMP y traceroute.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Kali Linux</span>
+              <span class="tech-tag">TCP/IP</span>
+              <span class="tech-tag">DNS</span>
+              <span class="tech-tag">ICMP</span>
+              <span class="tech-tag">Routing</span>
+            </div>
+            <div class="evidence-meta">
+              <span>📸 5 Capturas de evidencia</span>
+              <span>📄 1 Informe PDF</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="./01-Descubriendo-Mi-Red/index.html" class="btn-card-link">
+              Ver Documentación Web →
+            </a>
+            <a href="./01-Descubriendo-Mi-Red/informe.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf-quick" title="Ver informe en PDF">
+              PDF ↗
+            </a>
+          </div>
+        </article>
 
-        <section class="grid">
-            <article class="card">
-                <div class="number">PROYECTO 01</div>
-                <h3>Fundamentos de red</h3>
-                <p>Exploración de configuración de red, conectividad y conceptos básicos.</p>
-                <a href="./01-Descubriendo-Mi-Red/">Ver documentación →</a>
-            </article>
+        <!-- Tarjeta 02: Wireshark Traffic Analysis -->
+        <article class="project-card">
+          <div class="card-top">
+            <span class="card-badge">PROYECTO 02</span>
+            <span class="status-badge completed">✓ Completado</span>
+          </div>
+          <div class="card-body">
+            <h3>Análisis con Wireshark</h3>
+            <p>
+              Inspección y captura de paquetes en tiempo real en entorno Kali Linux. Desglose forense de flujos de tráfico ICMP (ping), resolución DNS e inicio de sesión TCP 3-Way Handshake junto al saludo seguro TLS Client Hello.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">Packet Analysis</span>
+              <span class="tech-tag">TCP Handshake</span>
+              <span class="tech-tag">TLS</span>
+              <span class="tech-tag">DNS Queries</span>
+            </div>
+            <div class="evidence-meta">
+              <span>📸 3 Capturas de paquetes</span>
+              <span>📄 1 Informe PDF</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="./02-Wireshark-Traffic-Analysis/index.html" class="btn-card-link">
+              Ver Documentación Web →
+            </a>
+            <a href="./02-Wireshark-Traffic-Analysis/informe%20icmp.docx.pdf" target="_blank" rel="noopener noreferrer" class="btn-pdf-quick" title="Ver informe en PDF">
+              PDF ↗
+            </a>
+          </div>
+        </article>
 
-            <article class="card">
-                <div class="number">PROYECTO 02</div>
-                <h3>Análisis con Wireshark</h3>
-                <p>Observación y análisis de tráfico, DNS, ICMP y conexiones TLS.</p>
-                <a href="./02-Wireshark/">Ver documentación →</a>
-            </article>
+        <!-- Tarjeta 03: GRC & ISO 27001 (En desarrollo) -->
+        <article class="project-card" style="border-style: dashed;">
+          <div class="card-top">
+            <span class="card-badge">PROYECTO 03</span>
+            <span class="status-badge dev">⚙️ En desarrollo</span>
+          </div>
+          <div class="card-body">
+            <h3>GRC &amp; ISO 27001 · AndesPay</h3>
+            <p>
+              Caso de estudio aplicado a un entorno Fintech simulado. Evaluación y matriz de riesgos de seguridad de la información, análisis de brechas y diseño de controles defensivos alineados a la norma ISO/IEC 27001.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">GRC</span>
+              <span class="tech-tag">ISO/IEC 27001</span>
+              <span class="tech-tag">Risk Assessment</span>
+              <span class="tech-tag">Fintech Security</span>
+            </div>
+            <div class="evidence-meta">
+              <span>⏳ Fase: Modelado de matriz y controles</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span style="font-size: 0.85rem; color: var(--accent-amber);">Próximamente disponible en el portafolio</span>
+          </div>
+        </article>
+      </div>
+    </section>
 
-            <article class="card">
-                <div class="number">PROYECTO 03</div>
-                <h3>GRC · AndesPay</h3>
-                <p>Proyecto en preparación sobre riesgos, controles e ISO 27001.</p>
-                <span class="status">Próximamente</span>
-            </article>
-        </section>
-    </main>
+    <!-- Sección de Áreas Técnicas -->
+    <section id="areas" style="margin-top: 30px;">
+      <div class="section-header">
+        <span class="section-label">Competencias &amp; Conocimiento</span>
+        <h2 class="section-title">Áreas Técnicas de Especialización</h2>
+        <p class="section-desc">
+          Líneas de aprendizaje práctico aplicadas tanto en entornos de laboratorio como en estándares de la industria.
+        </p>
+      </div>
 
-    <footer>
-        Cybersecurity Portfolio · Proyecto personal de aprendizaje.
-        Los nuevos módulos se incorporarán progresivamente.
-    </footer>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🌐</span>
+            <h4>Networking</h4>
+          </div>
+          <p>Protocolos TCP/IP, DNS, ICMP, direccionamiento IPv4/IPv6, enrutamiento y análisis de puertos.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🦈</span>
+            <h4>Análisis de Tráfico</h4>
+          </div>
+          <p>Captura e inspección con Wireshark, filtrado de paquetes, identificación de flags TCP y sesiones TLS.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🐧</span>
+            <h4>Sistemas Linux &amp; Windows</h4>
+          </div>
+          <p>Administración de consola en Kali/Debian, permisos, servicios, Event Viewer y Defender.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🛡️</span>
+            <h4>Monitoreo &amp; SOC</h4>
+          </div>
+          <p>Conceptos de SIEM, recolección de evidencias para respuesta a incidentes y análisis de eventos.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">🏢</span>
+            <h4>Gobernanza &amp; GRC</h4>
+          </div>
+          <p>Fundamentos de ISO/IEC 27001, marcos NIST CSF, gestión de riesgos y auditoría de controles.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-header">
+            <span class="skill-icon">💻</span>
+            <h4>Desarrollo Seguro</h4>
+          </div>
+          <p>Buenas prácticas de software, mitigación OWASP Top 10, Java, Spring Boot y bases de datos SQL.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" style="margin-top: 30px;">
+      <div class="content-block" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px;">
+        <div>
+          <span class="section-label">Contacto</span>
+          <h2 style="border: none; padding: 0; margin-bottom: 8px;">Johan González</h2>
+          <p style="margin-bottom: 4px; color: var(--text-secondary);">
+            📍 Santiago, Chile &nbsp;|&nbsp; 📧 <a href="mailto:johangonzalezgallegos@gmail.com">johangonzalezgallegos@gmail.com</a>
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">
+            Abierto a oportunidades y proyectos en Ciberseguridad, Redes y Operaciones de Seguridad (SOC / Blue Team).
+          </p>
+        </div>
+        <div>
+          <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Explorar Repositorio en GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>Johan González · Cybersecurity Portfolio</h4>
+        <p>Documentación técnica de ciberseguridad para publicación en GitHub Pages.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#areas">Áreas</a>
+        <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

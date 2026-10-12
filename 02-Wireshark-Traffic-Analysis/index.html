@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratorio 02: Análisis de tráfico de red en tiempo real con Wireshark en Kali Linux - Portafolio de Ciberseguridad de Johan González.">
+  <title>Proyecto 02: Análisis de Tráfico con Wireshark · Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+  <!-- Header / Barra de Navegación -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon">🛡️</div>
+        <div class="brand-title">CYBERSECURITY<span>.PORTFOLIO</span></div>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html#proyectos" class="nav-link active">Proyectos</a></li>
+          <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+          <li>
+            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="main-wrapper">
+    <!-- Migas de Pan -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">← Portafolio Principal</a>
+      <span>/</span>
+      <span style="color: var(--cyan-bright);">02-Wireshark-Traffic-Analysis</span>
+    </nav>
+
+    <!-- Cabecera del Proyecto -->
+    <header class="project-detail-header">
+      <div class="header-badges">
+        <span class="card-badge">LAB 02 · PACKET &amp; TRAFFIC ANALYSIS</span>
+        <span class="status-badge completed">✓ Completado</span>
+        <span class="card-badge" style="color: #cbd5e1; border-color: var(--border-subtle);">Wireshark · Kali Linux</span>
+      </div>
+      <h1>Proyecto 02: Análisis de Tráfico con Wireshark</h1>
+      <p class="project-lead">
+        Inspección y captura de paquetes de red en tiempo real en entorno Kali Linux. Este laboratorio explora el comportamiento del modelo de capas mediante el desglose forense de flujos de tráfico en protocolos fundamentales: ICMP (Echo Request/Reply), resolución de nombres DNS y establecimiento de conexión mediante TCP 3-Way Handshake junto al inicio de sesión segura con TLS.
+      </p>
+      <div class="header-cta-row">
+        <a href="./informe%20icmp.docx.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Abrir Informe Técnico (PDF)
+        </a>
+        <a href="../01-Descubriendo-Mi-Red/index.html" class="btn-secondary">
+          ← Anterior: Lab 01 (Red)
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenido y Sidebar -->
+    <div class="detail-grid">
+      <!-- Columna Principal -->
+      <section class="detail-main">
+        <!-- Bloque de Objetivos -->
+        <article class="content-block">
+          <h2>🎯 Objetivos del Laboratorio</h2>
+          <p>
+            Comprender el ciclo de vida de los paquetes en la red a través de la captura interactiva con Wireshark, analizando cabeceras, flags y mecanismos de negociación:
+          </p>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span> <span><strong>Captura en tiempo real:</strong> Filtrar e inspeccionar paquetes que viajan entre el host local (10.0.2.15) y servidores en Internet.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Análisis de ICMP:</strong> Examinar la correlación entre peticiones Echo Request y respuestas Echo Reply, identificando campos de secuencia y tiempo de respuesta.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Resolución DNS:</strong> Observar cómo se estructuran las peticiones estándar de consulta (Query A / AAAA) y cómo el servidor DNS responde con las direcciones IP correspondientes.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Negociación TCP &amp; Cifrado TLS:</strong> Desglosar el saludo de tres vías (SYN, SYN-ACK, ACK) y la transición hacia el canal seguro HTTPS a través de TLS Client Hello.</span></li>
+          </ul>
+        </article>
+
+        <!-- Bloque de Protocolos Analizados -->
+        <article class="content-block">
+          <h2>🔬 Desglose de Protocolos Auditados</h2>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 18px 0;">
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 18px; border-radius: var(--radius-md);">
+              <h4 style="color: var(--cyan-bright); margin-bottom: 6px;">1. ICMP (Internet Control Message)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                Verificación de conectividad bilateral. Se identificaron tipos y códigos ICMP (Type 8 para solicitud y Type 0 para respuesta) sin fragmentación ni latencias anómalas.
+              </p>
+            </div>
+
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 18px; border-radius: var(--radius-md);">
+              <h4 style="color: var(--cyan-bright); margin-bottom: 6px;">2. DNS (Domain Name System)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                Peticiones sobre UDP puerto 53 para dominios como google.com y openai.com, visualizando respuestas con múltiples registros A (IPv4) y AAAA (IPv6).
+              </p>
+            </div>
+
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 18px; border-radius: var(--radius-md);">
+              <h4 style="color: var(--cyan-bright); margin-bottom: 6px;">3. TCP &amp; TLS (HTTPS)</h4>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0;">
+                Establecimiento de sesión confiable mediante banderas SYN, SYN-ACK y ACK en puerto 443, seguido inmediatamente por la negociación criptográfica Client Hello.
+              </p>
+            </div>
+          </div>
+
+          <div class="terminal-block">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">Filtros de captura recomendados en Wireshark</span>
+            </div>
+            <div class="terminal-body">
+              <span class="comment"># Filtrar únicamente paquetes ICMP de prueba de conectividad</span><br>
+              <span class="cmd">icmp</span><br><br>
+              <span class="comment"># Filtrar consultas y respuestas de resolución DNS</span><br>
+              <span class="cmd">dns &amp;&amp; (dns.flags.response == 0 || dns.flags.response == 1)</span><br><br>
+              <span class="comment"># Filtrar establecimiento de conexión TCP y paquetes de enlace seguro</span><br>
+              <span class="cmd">tcp.flags.syn == 1 || tls.handshake.type == 1</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bloque de Evidencia / Capturas -->
+        <article class="content-block">
+          <h2>📸 Evidencias de Captura en Wireshark</h2>
+          <p>
+            Haz clic sobre cualquier imagen para inspeccionar en pantalla completa el panel de paquetes, cabeceras y detalles hexadecimales:
+          </p>
+
+          <div class="evidence-gallery">
+            <!-- Captura 1 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura1_icmp.png" alt="Captura 1: Tráfico ICMP Echo Request y Echo Reply" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>1. Tráfico ICMP (Ping)</h4>
+                <p>Captura de paquetes Echo Request originados en la IP local (10.0.2.15) y su correspondiente Echo Reply remoto.</p>
+              </div>
+            </div>
+
+            <!-- Captura 2 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura2_dns.png" alt="Captura 2: Consultas y Respuestas DNS" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>2. Consultas y Respuestas DNS</h4>
+                <p>Resolución de nombres para google.com y openai.com desglosando queries y servidores de nombres.</p>
+              </div>
+            </div>
+
+            <!-- Captura 3 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura3_tcp_handshake.png" alt="Captura 3: TCP 3-Way Handshake y TLS Client Hello" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>3. TCP Handshake &amp; TLS</h4>
+                <p>Saludo de tres vías (SYN / SYN-ACK / ACK) seguido de paquete Client Hello al invocar petición HTTPS con curl.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bloque de Conclusiones -->
+        <article class="content-block">
+          <h2>🧠 Aprendizajes Clave &amp; Aplicabilidad en Seguridad</h2>
+          <p>
+            El análisis de paquetes es una de las competencias más críticas para roles de Blue Team, SOC Analyst y Respuesta a Incidentes:
+          </p>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span> <span><strong>Detección de Anomalías de Red:</strong> Identificar retransmisiones excesivas, escaneos TCP SYN sigilosos (SYN stealth scan) y tráfico fuera de puertos convencionales.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Inspección de Tráfico Cifrado vs. No Cifrado:</strong> Comprender qué metadatos permanecen visibles (SNI en Client Hello, IPs de destino, tamaños de paquete) aun cuando la carga útil esté protegida por TLS.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Análisis de C2 y Exfiltración:</strong> Bases para investigar técnicas de tunelización DNS (DNS tunneling) o beaconing ICMP utilizados por actores de amenazas.</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Ficha del Laboratorio</h3>
+          <table class="meta-table">
+            <tbody>
+              <tr>
+                <td>Código</td>
+                <td>LAB-02</td>
+              </tr>
+              <tr>
+                <td>Plataforma</td>
+                <td>Wireshark · Kali Linux</td>
+              </tr>
+              <tr>
+                <td>IP Local</td>
+                <td>10.0.2.15 (NAT)</td>
+              </tr>
+              <tr>
+                <td>Protocolos</td>
+                <td>ICMP, DNS, TCP, TLS</td>
+              </tr>
+              <tr>
+                <td>Evidencias</td>
+                <td>3 Capturas PNG</td>
+              </tr>
+              <tr>
+                <td>Documento</td>
+                <td>informe icmp.docx.pdf (82 KB)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Descarga del Informe</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            Informe técnico detallado que cubre la metodología de captura, filtros aplicados e interpretación del flujo ICMP.
+          </p>
+          <a href="./informe%20icmp.docx.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            Descargar PDF
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Navegación del Portafolio</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+            <li><a href="../index.html">← Portafolio General</a></li>
+            <li><a href="../01-Descubriendo-Mi-Red/index.html">• Lab 01: Descubriendo Mi Red</a></li>
+            <li><strong style="color: var(--cyan-bright);">• Lab 02: Análisis Wireshark</strong></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>Johan González · Cybersecurity Portfolio</h4>
+        <p>Laboratorios técnicos prácticos de redes, monitoreo y seguridad de la información.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="../01-Descubriendo-Mi-Red/index.html">Lab 01 Red</a>
+        <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

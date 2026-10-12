@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratorio 01: Fundamentos de red y conectividad en Kali Linux - Portafolio de Ciberseguridad de Johan González.">
+  <title>Proyecto 01: Descubriendo Mi Red · Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+  <!-- Header / Barra de Navegación -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon">🛡️</div>
+        <div class="brand-title">CYBERSECURITY<span>.PORTFOLIO</span></div>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html#proyectos" class="nav-link active">Proyectos</a></li>
+          <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+          <li>
+            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="main-wrapper">
+    <!-- Migas de Pan -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">← Portafolio Principal</a>
+      <span>/</span>
+      <span style="color: var(--cyan-bright);">01-Descubriendo-Mi-Red</span>
+    </nav>
+
+    <!-- Cabecera del Proyecto -->
+    <header class="project-detail-header">
+      <div class="header-badges">
+        <span class="card-badge">LAB 01 · FUNDAMENTOS DE RED</span>
+        <span class="status-badge completed">✓ Completado</span>
+        <span class="card-badge" style="color: #cbd5e1; border-color: var(--border-subtle);">Kali Linux</span>
+      </div>
+      <h1>Proyecto 01: Descubriendo Mi Red</h1>
+      <p class="project-lead">
+        Primer laboratorio práctico de fundamentos de networking en entorno Kali Linux virtualizado bajo red NAT.
+        Comprende el diagnóstico de interfaces de red, direccionamiento IP privado, enrutamiento hacia la puerta de enlace predeterminada (Gateway), resolución DNS y trazado de rutas externas.
+      </p>
+      <div class="header-cta-row">
+        <a href="./informe.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Abrir Informe Técnico (PDF)
+        </a>
+        <a href="../02-Wireshark-Traffic-Analysis/index.html" class="btn-secondary">
+          Siguiente: Lab 02 (Wireshark) →
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenido y Sidebar -->
+    <div class="detail-grid">
+      <!-- Columna Principal -->
+      <section class="detail-main">
+        <!-- Bloque de Objetivos -->
+        <article class="content-block">
+          <h2>🎯 Objetivos del Laboratorio</h2>
+          <p>
+            Identificar y auditar de forma precisa los parámetros esenciales de configuración de red en un sistema operativo Linux para comprender el ciclo completo de comunicación local e Internet:
+          </p>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span> <span><strong>Direccionamiento IP:</strong> Reconocer la IP local asignada al adaptador mediante interfaces virtuales en un entorno NAT privado.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Puerta de enlace predeterminada (Gateway):</strong> Identificar el salto inicial requerido para comunicarse fuera del segmento local.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Servidores DNS:</strong> Verificar los servidores resolutores de nombres configurados en el archivo del sistema.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Diagnóstico de conectividad:</strong> Evaluar la respuesta de red hacia hosts externos usando el protocolo ICMP.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Enrutamiento y saltos:</strong> Analizar la ruta que toman los paquetes capa a capa hasta llegar al destino final en Internet.</span></li>
+          </ul>
+        </article>
+
+        <!-- Bloque de Procedimiento y Comandos -->
+        <article class="content-block">
+          <h2>💻 Procedimiento &amp; Comandos Ejecutados</h2>
+          <p>
+            Cada fase del laboratorio se documentó ejecutando utilidades estándar de administración y diagnóstico de redes en la consola de Linux:
+          </p>
+
+          <div class="terminal-block">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">kali@linux: ~ / networking-lab</span>
+            </div>
+            <div class="terminal-body">
+              <span class="comment"># 1. Identificar interfaces y dirección IP asignada</span><br>
+              <span class="cmd">ip a</span><br><br>
+              <span class="comment"># 2. Identificar la tabla de enrutamiento y Gateway por defecto</span><br>
+              <span class="cmd">ip route</span><br><br>
+              <span class="comment"># 3. Comprobar los servidores DNS configurados</span><br>
+              <span class="cmd">cat /etc/resolv.conf</span><br><br>
+              <span class="comment"># 4. Prueba de conectividad e integridad ICMP</span><br>
+              <span class="cmd">ping -c 4 google.com</span><br><br>
+              <span class="comment"># 5. Análisis de saltos de red hacia destino externo</span><br>
+              <span class="cmd">traceroute google.com</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bloque de Evidencia / Capturas -->
+        <article class="content-block">
+          <h2>📸 Evidencias Técnicas del Laboratorio</h2>
+          <p>
+            Haz clic en cualquier captura para ampliarla en alta resolución y examinar en detalle los datos obtenidos de la terminal:
+          </p>
+
+          <div class="evidence-gallery">
+            <!-- Captura 1 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura1_ip.png" alt="Captura 1: Identificación de dirección IP con ip a" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>1. Dirección IP (`ip a`)</h4>
+                <p>Identificación de la interfaz y la dirección IP privada asignada dentro del entorno NAT virtual.</p>
+              </div>
+            </div>
+
+            <!-- Captura 2 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura2_gateway.png" alt="Captura 2: Identificación de Gateway con ip route" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>2. Gateway (`ip route`)</h4>
+                <p>Verificación de la ruta por defecto (`default via`) utilizada como puerta de salida hacia el router virtual.</p>
+              </div>
+            </div>
+
+            <!-- Captura 3 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura3_dns.png" alt="Captura 3: Servidores DNS en /etc/resolv.conf" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>3. Servidores DNS (`resolv.conf`)</h4>
+                <p>Inspección de las directivas `nameserver` para la resolución de nombres de dominio.</p>
+              </div>
+            </div>
+
+            <!-- Captura 4 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura4_ping.png" alt="Captura 4: Prueba de conectividad con ping" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>4. Conectividad ICMP (`ping`)</h4>
+                <p>Transmisión y recepción de paquetes ICMP Echo Request/Reply hacia google.com sin pérdida.</p>
+              </div>
+            </div>
+
+            <!-- Captura 5 -->
+            <div class="evidence-card" tabindex="0">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura5_traceroute.png" alt="Captura 5: Trazado de ruta con traceroute" loading="lazy">
+                <div class="zoom-overlay">🔍 Ver captura completa</div>
+              </div>
+              <div class="evidence-info">
+                <h4>5. Trazado de Ruta (`traceroute`)</h4>
+                <p>Observación de los saltos intermedios y tiempos de latencia hasta alcanzar la infraestructura de Google.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bloque de Conclusiones -->
+        <article class="content-block">
+          <h2>🧠 Aprendizajes Clave &amp; Aplicabilidad en Seguridad</h2>
+          <p>
+            Este laboratorio sienta las bases técnicas fundamentales para cualquier rol de defensa o análisis en ciberseguridad:
+          </p>
+          <ul class="check-list">
+            <li><span class="check-icon">✓</span> <span><strong>Comprensión de NAT y direccionamiento RFC 1918:</strong> Esencial para rastrear artefactos y diferenciar direcciones privadas de IP públicas en incidentes de red.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Diagnóstico rápido de conectividad:</strong> Saber identificar si una caída o anomalía proviene de resolución DNS, falla de enrutamiento o bloqueo ICMP.</span></li>
+            <li><span class="check-icon">✓</span> <span><strong>Fundamento para Analistas SOC:</strong> Entender la topología de red local antes de analizar alertas de tráfico malicioso, escaneos o intentos de exfiltración.</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h3>Ficha del Laboratorio</h3>
+          <table class="meta-table">
+            <tbody>
+              <tr>
+                <td>Código</td>
+                <td>LAB-01</td>
+              </tr>
+              <tr>
+                <td>Sistema</td>
+                <td>Kali Linux (VM)</td>
+              </tr>
+              <tr>
+                <td>Red</td>
+                <td>NAT Privado</td>
+              </tr>
+              <tr>
+                <td>Herramientas</td>
+                <td>ip, ping, traceroute</td>
+              </tr>
+              <tr>
+                <td>Evidencias</td>
+                <td>5 Capturas PNG</td>
+              </tr>
+              <tr>
+                <td>Documento</td>
+                <td>informe.pdf (58 KB)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Descarga del Informe</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+            El informe completo incluye el análisis paso a paso, interpretación de resultados y consideraciones técnicas.
+          </p>
+          <a href="./informe.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
+            Descargar PDF
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Navegación del Portafolio</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+            <li><a href="../index.html">← Portafolio General</a></li>
+            <li><strong style="color: var(--cyan-bright);">• Lab 01: Descubriendo Mi Red</strong></li>
+            <li><a href="../02-Wireshark-Traffic-Analysis/index.html">• Lab 02: Análisis Wireshark →</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>Johan González · Cybersecurity Portfolio</h4>
+        <p>Laboratorios técnicos prácticos de redes, monitoreo y seguridad de la información.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="../02-Wireshark-Traffic-Analysis/index.html">Lab 02 Wireshark</a>
+        <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
