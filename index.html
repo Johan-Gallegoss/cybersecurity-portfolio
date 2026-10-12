@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de ciberseguridad, redes y GRC.">
+    <title>Cybersecurity Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e5edf8;
+        }
+
+        header {
+            padding: 24px 8%;
+            border-bottom: 1px solid #263449;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        header strong {
+            color: #67e8f9;
+            letter-spacing: 1px;
+        }
+
+        main {
+            width: min(1050px, 88%);
+            margin: 70px auto;
+        }
+
+        .tag {
+            color: #67e8f9;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            margin: 18px 0;
+        }
+
+        h1 span {
+            color: #67e8f9;
+        }
+
+        .intro {
+            max-width: 650px;
+            color: #a9b8cc;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            margin-top: 55px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background: #111c30;
+            border: 1px solid #293950;
+            border-radius: 14px;
+            padding: 24px;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #67e8f9;
+        }
+
+        .card .number {
+            color: #67e8f9;
+            font-size: 13px;
+        }
+
+        .card p {
+            color: #a9b8cc;
+            line-height: 1.6;
+        }
+
+        .card a {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #183b40;
+            color: #8df4dc;
+            font-size: 12px;
+        }
+
+        footer {
+            border-top: 1px solid #263449;
+            padding: 25px 8%;
+            color: #8293aa;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <strong>CYBERSECURITY.PORTFOLIO</strong>
+        <span class="status">En desarrollo</span>
+    </header>
+
+    <main>
+        <div class="tag">Portfolio · Redes · Seguridad · GRC</div>
+
+        <h1>Security through<br><span>analysis &amp; control.</span></h1>
+
+        <p class="intro">
+            Portafolio práctico de ciberseguridad que reúne laboratorios
+            técnicos, análisis de riesgos, gestión de controles y auditoría
+            de seguridad de la información.
+        </p>
+
+        <h2 class="section-title">Explorar proyectos</h2>
+
+        <section class="grid">
+            <article class="card">
+                <div class="number">PROYECTO 01</div>
+                <h3>Fundamentos de red</h3>
+                <p>Exploración de configuración de red, conectividad y conceptos básicos.</p>
+                <a href="./01-Descubriendo-Mi-Red/">Ver documentación →</a>
+            </article>
+
+            <article class="card">
+                <div class="number">PROYECTO 02</div>
+                <h3>Análisis con Wireshark</h3>
+                <p>Observación y análisis de tráfico, DNS, ICMP y conexiones TLS.</p>
+                <a href="./02-Wireshark/">Ver documentación →</a>
+            </article>
+
+            <article class="card">
+                <div class="number">PROYECTO 03</div>
+                <h3>GRC · AndesPay</h3>
+                <p>Proyecto en preparación sobre riesgos, controles e ISO 27001.</p>
+                <span class="status">Próximamente</span>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        Cybersecurity Portfolio · Proyecto personal de aprendizaje.
+        Los nuevos módulos se incorporarán progresivamente.
+    </footer>
+</body>
+
+</html>
