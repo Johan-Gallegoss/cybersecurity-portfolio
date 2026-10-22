@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Laboratorio 01: Fundamentos de red y conectividad en Kali Linux - Portafolio de Ciberseguridad de Johan González.">
-  <title>Proyecto 01: Descubriendo Mi Red · Cybersecurity Portfolio</title>
+  <meta name="description" content="Laboratorio 01: Fundamentos de red, diagnóstico de conectividad y análisis de enrutamiento en Kali Linux. Portafolio de Ciberseguridad de Johan González.">
+  <title>Proyecto 01: Descubriendo Mi Red · Portafolio de Ciberseguridad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,21 +13,28 @@
 </head>
 
 <body>
-  <!-- Header / Barra de Navegación -->
+
+  <!-- =====================================================================
+       HEADER / Barra de Navegación
+       ===================================================================== -->
   <header class="site-header">
     <div class="nav-container">
       <a href="../index.html" class="brand">
-        <div class="brand-icon">🛡️</div>
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
         <div class="brand-title">CYBERSECURITY<span>.PORTFOLIO</span></div>
       </a>
       <nav>
         <ul class="nav-menu">
           <li><a href="../index.html" class="nav-link">Inicio</a></li>
-          <li><a href="../index.html#proyectos" class="nav-link active">Proyectos</a></li>
+          <li><a href="../index.html#laboratorios" class="nav-link active">Laboratorios</a></li>
           <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
           <li>
-            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github" aria-label="Ver repositorio en GitHub (abre en nueva pestaña)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
               <span>GitHub</span>
@@ -38,10 +45,13 @@
     </div>
   </header>
 
-  <!-- Contenedor Principal -->
+  <!-- =====================================================================
+       CONTENEDOR PRINCIPAL
+       ===================================================================== -->
   <main class="main-wrapper">
+
     <!-- Migas de Pan -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
       <a href="../index.html">← Portafolio Principal</a>
       <span>/</span>
       <span style="color: var(--cyan-bright);">01-Descubriendo-Mi-Red</span>
@@ -52,19 +62,19 @@
       <div class="header-badges">
         <span class="card-badge">LAB 01 · FUNDAMENTOS DE RED</span>
         <span class="status-badge completed">✓ Completado</span>
-        <span class="card-badge" style="color: #cbd5e1; border-color: var(--border-subtle);">Kali Linux</span>
+        <span class="card-badge" style="color: #cbd5e1; border-color: var(--border-subtle);">Kali Linux · NAT</span>
       </div>
       <h1>Proyecto 01: Descubriendo Mi Red</h1>
       <p class="project-lead">
-        Primer laboratorio práctico de fundamentos de networking en entorno Kali Linux virtualizado bajo red NAT.
-        Comprende el diagnóstico de interfaces de red, direccionamiento IP privado, enrutamiento hacia la puerta de enlace predeterminada (Gateway), resolución DNS y trazado de rutas externas.
+        Auditoría y diagnóstico de conectividad de red en un sistema Kali Linux virtualizado bajo esquema NAT.
+        Este informe técnico documenta de forma completa la identificación de interfaces IP, la puerta de enlace predeterminada, la resolución DNS del sistema, las pruebas de integridad ICMP y el comportamiento del trazado de rutas externas.
       </p>
       <div class="header-cta-row">
-        <a href="./informe.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        <a href="#procedimiento" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
           </svg>
-          Abrir Informe Técnico (PDF)
+          Ver Procedimiento y Evidencias
         </a>
         <a href="../02-Wireshark-Traffic-Analysis/index.html" class="btn-secondary">
           Siguiente: Lab 02 (Wireshark) →
@@ -72,184 +82,388 @@
       </div>
     </header>
 
-    <!-- Contenido y Sidebar -->
+    <!-- Disposición en Grilla (Contenido Principal + Sidebar) -->
     <div class="detail-grid">
+
       <!-- Columna Principal -->
       <section class="detail-main">
-        <!-- Bloque de Objetivos -->
-        <article class="content-block">
-          <h2>🎯 Objetivos del Laboratorio</h2>
+
+        <!-- 1. Objetivos y Alcance -->
+        <article class="content-block" id="objetivos">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            Objetivos y Alcance del Laboratorio
+          </h2>
           <p>
-            Identificar y auditar de forma precisa los parámetros esenciales de configuración de red en un sistema operativo Linux para comprender el ciclo completo de comunicación local e Internet:
+            El propósito de este laboratorio es analizar metódicamente la configuración de red y el comportamiento de la pila TCP/IP en un entorno Linux, comprendiendo cómo se comunican las interfaces locales con la red interna y hacia hosts externos en Internet:
           </p>
           <ul class="check-list">
-            <li><span class="check-icon">✓</span> <span><strong>Direccionamiento IP:</strong> Reconocer la IP local asignada al adaptador mediante interfaces virtuales en un entorno NAT privado.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Puerta de enlace predeterminada (Gateway):</strong> Identificar el salto inicial requerido para comunicarse fuera del segmento local.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Servidores DNS:</strong> Verificar los servidores resolutores de nombres configurados en el archivo del sistema.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Diagnóstico de conectividad:</strong> Evaluar la respuesta de red hacia hosts externos usando el protocolo ICMP.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Enrutamiento y saltos:</strong> Analizar la ruta que toman los paquetes capa a capa hasta llegar al destino final en Internet.</span></li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Identificación de direccionamiento IP:</strong> Reconocer las interfaces activas, direcciones IPv4/IPv6 asignadas y máscaras de subred bajo direccionamiento privado RFC 1918.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Determinación de la puerta de enlace (Gateway):</strong> Identificar el salto inicial configurado para enrutar el tráfico fuera del segmento de red virtual.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Auditoría de resolución DNS:</strong> Comprobar los servidores de nombres configurados a nivel de sistema operativo para la traducción de nombres de dominio.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Diagnóstico de conectividad bidireccional:</strong> Evaluar la transmisión y recepción de paquetes hacia destinos en Internet mediante el protocolo ICMP.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span><strong>Análisis de saltos y enrutamiento:</strong> Rastrear el camino recorrido por los paquetes capa a capa y documentar el comportamiento de las respuestas en entornos NAT virtualizados.</span>
+            </li>
           </ul>
         </article>
 
-        <!-- Bloque de Procedimiento y Comandos -->
-        <article class="content-block">
-          <h2>💻 Procedimiento &amp; Comandos Ejecutados</h2>
+        <!-- 2. Entorno y Parámetros Observados -->
+        <article class="content-block" id="entorno">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            Entorno de Ejecución y Parámetros Auditados
+          </h2>
           <p>
-            Cada fase del laboratorio se documentó ejecutando utilidades estándar de administración y diagnóstico de redes en la consola de Linux:
+            Las pruebas se ejecutaron sobre una máquina virtual con el sistema operativo <strong>Kali Linux</strong> configurada bajo el modo de red <strong>NAT (Network Address Translation)</strong> en el hipervisor VirtualBox. Los valores concretos comprobados en las evidencias son:
           </p>
 
-          <div class="terminal-block">
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-              </div>
-              <span class="terminal-title">kali@linux: ~ / networking-lab</span>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0;">
+            <div style="background: rgba(10, 16, 31, 0.85); border: 1px solid var(--border-subtle); border-top: 2px solid var(--cyan-bright); border-radius: var(--radius-sm); padding: 14px 16px;">
+              <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--cyan-bright); text-transform: uppercase;">Dirección IP Local</span>
+              <p style="font-size: 1.15rem; font-weight: 700; color: #fff; margin: 4px 0 0 0; font-family: var(--font-mono);">10.0.2.15/24</p>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Interfaz eth0 (MTU 1500)</span>
             </div>
-            <div class="terminal-body">
-              <span class="comment"># 1. Identificar interfaces y dirección IP asignada</span><br>
-              <span class="cmd">ip a</span><br><br>
-              <span class="comment"># 2. Identificar la tabla de enrutamiento y Gateway por defecto</span><br>
-              <span class="cmd">ip route</span><br><br>
-              <span class="comment"># 3. Comprobar los servidores DNS configurados</span><br>
-              <span class="cmd">cat /etc/resolv.conf</span><br><br>
-              <span class="comment"># 4. Prueba de conectividad e integridad ICMP</span><br>
-              <span class="cmd">ping -c 4 google.com</span><br><br>
-              <span class="comment"># 5. Análisis de saltos de red hacia destino externo</span><br>
-              <span class="cmd">traceroute google.com</span>
+
+            <div style="background: rgba(10, 16, 31, 0.85); border: 1px solid var(--border-subtle); border-top: 2px solid var(--cyan-bright); border-radius: var(--radius-sm); padding: 14px 16px;">
+              <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--cyan-bright); text-transform: uppercase;">Puerta de Enlace</span>
+              <p style="font-size: 1.15rem; font-weight: 700; color: #fff; margin: 4px 0 0 0; font-family: var(--font-mono);">10.0.2.2</p>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Gateway NAT VirtualBox</span>
+            </div>
+
+            <div style="background: rgba(10, 16, 31, 0.85); border: 1px solid var(--border-subtle); border-top: 2px solid var(--cyan-bright); border-radius: var(--radius-sm); padding: 14px 16px;">
+              <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--cyan-bright); text-transform: uppercase;">Segmento de Red</span>
+              <p style="font-size: 1.15rem; font-weight: 700; color: #fff; margin: 4px 0 0 0; font-family: var(--font-mono);">10.0.2.0/24</p>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Broadcast: 10.0.2.255</span>
+            </div>
+
+            <div style="background: rgba(10, 16, 31, 0.85); border: 1px solid var(--border-subtle); border-top: 2px solid var(--cyan-bright); border-radius: var(--radius-sm); padding: 14px 16px;">
+              <span style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--cyan-bright); text-transform: uppercase;">Servidor DNS IPv4</span>
+              <p style="font-size: 1.15rem; font-weight: 700; color: #fff; margin: 4px 0 0 0; font-family: var(--font-mono);">192.168.100.1</p>
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Vía NetworkManager / Host</span>
             </div>
           </div>
         </article>
 
-        <!-- Bloque de Evidencia / Capturas -->
-        <article class="content-block">
-          <h2>📸 Evidencias Técnicas del Laboratorio</h2>
+        <!-- 3. Procedimiento Detallado Paso a Paso -->
+        <article class="content-block" id="procedimiento">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            Procedimiento Técnico, Comandos y Resultados
+          </h2>
           <p>
-            Haz clic en cualquier captura para ampliarla en alta resolución y examinar en detalle los datos obtenidos de la terminal:
+            A continuación se presenta el desglose de cada una de las 5 actividades realizadas en el laboratorio, con el comando exacto ejecutado, la salida de la terminal y su análisis técnico correspondiente:
           </p>
 
-          <div class="evidence-gallery">
-            <!-- Captura 1 -->
-            <div class="evidence-card" tabindex="0">
-              <div class="evidence-thumb-wrap">
-                <img src="./capturas/captura1_ip.png" alt="Captura 1: Identificación de dirección IP con ip a" loading="lazy">
-                <div class="zoom-overlay">🔍 Ver captura completa</div>
-              </div>
-              <div class="evidence-info">
-                <h4>1. Dirección IP (`ip a`)</h4>
-                <p>Identificación de la interfaz y la dirección IP privada asignada dentro del entorno NAT virtual.</p>
-              </div>
+          <!-- Paso 1 -->
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="card-badge">PASO 01</span>
+              <h3 style="font-size: 1.15rem; color: #fff; margin: 0;">Identificación de Interfaces y Dirección IP</h3>
             </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 12px;">
+              Se utilizó el comando <code>ip a</code> (abreviatura de <code>ip address show</code>) para listar todas las interfaces de red configuradas en el kernel de Linux.
+            </p>
 
-            <!-- Captura 2 -->
-            <div class="evidence-card" tabindex="0">
+
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-top: 10px;">
+              El prefijo OUI de la dirección MAC (<code>08:00:27</code>) identifica la tarjeta de red como una interfaz virtual emulada por Oracle VirtualBox, lo que confirma el entorno de laboratorio. La interfaz <code>eth0</code> aparece en estado <code>UP</code> con direccionamiento dinámico DHCP dentro del segmento privado RFC 1918.
+            </p>
+
+            <!-- Evidencia Paso 1 -->
+            <div class="evidence-card" style="margin-top: 14px;" tabindex="0" role="button" aria-label="Ampliar captura 1: resultado de ip a">
               <div class="evidence-thumb-wrap">
-                <img src="./capturas/captura2_gateway.png" alt="Captura 2: Identificación de Gateway con ip route" loading="lazy">
-                <div class="zoom-overlay">🔍 Ver captura completa</div>
+                <img src="./capturas/captura1_ip.png" alt="Captura 1: Salida del comando ip a mostrando interfaz eth0 con IP 10.0.2.15/24" loading="lazy">
+                <div class="zoom-overlay">🔍 Ampliar captura</div>
               </div>
               <div class="evidence-info">
-                <h4>2. Gateway (`ip route`)</h4>
-                <p>Verificación de la ruta por defecto (`default via`) utilizada como puerta de salida hacia el router virtual.</p>
-              </div>
-            </div>
-
-            <!-- Captura 3 -->
-            <div class="evidence-card" tabindex="0">
-              <div class="evidence-thumb-wrap">
-                <img src="./capturas/captura3_dns.png" alt="Captura 3: Servidores DNS en /etc/resolv.conf" loading="lazy">
-                <div class="zoom-overlay">🔍 Ver captura completa</div>
-              </div>
-              <div class="evidence-info">
-                <h4>3. Servidores DNS (`resolv.conf`)</h4>
-                <p>Inspección de las directivas `nameserver` para la resolución de nombres de dominio.</p>
-              </div>
-            </div>
-
-            <!-- Captura 4 -->
-            <div class="evidence-card" tabindex="0">
-              <div class="evidence-thumb-wrap">
-                <img src="./capturas/captura4_ping.png" alt="Captura 4: Prueba de conectividad con ping" loading="lazy">
-                <div class="zoom-overlay">🔍 Ver captura completa</div>
-              </div>
-              <div class="evidence-info">
-                <h4>4. Conectividad ICMP (`ping`)</h4>
-                <p>Transmisión y recepción de paquetes ICMP Echo Request/Reply hacia google.com sin pérdida.</p>
-              </div>
-            </div>
-
-            <!-- Captura 5 -->
-            <div class="evidence-card" tabindex="0">
-              <div class="evidence-thumb-wrap">
-                <img src="./capturas/captura5_traceroute.png" alt="Captura 5: Trazado de ruta con traceroute" loading="lazy">
-                <div class="zoom-overlay">🔍 Ver captura completa</div>
-              </div>
-              <div class="evidence-info">
-                <h4>5. Trazado de Ruta (`traceroute`)</h4>
-                <p>Observación de los saltos intermedios y tiempos de latencia hasta alcanzar la infraestructura de Google.</p>
+                <h4>Evidencia — Salida de <code>ip a</code></h4>
+                <p>Interfaces <code>lo</code> y <code>eth0</code> activas. IP <code>10.0.2.15/24</code>, MAC <code>08:00:27:8a:35:d2</code> (OUI Oracle VirtualBox).</p>
               </div>
             </div>
           </div>
+
+          <!-- Paso 2 -->
+          <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="card-badge">PASO 02</span>
+              <h3 style="font-size: 1.15rem; color: #fff; margin: 0;">Identificación de la Puerta de Enlace (Gateway)</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 12px;">
+              Se ejecutó <code>ip route</code> para inspeccionar la tabla de enrutamiento del kernel e identificar la ruta por defecto empleada para comunicaciones hacia el exterior.
+            </p>
+
+
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-top: 10px;">
+              La dirección <code>10.0.2.2</code> no es un router físico; es el componente de NAT interno de VirtualBox que traduce el tráfico de la máquina virtual hacia la interfaz de red real del equipo anfitrión. Esta es la única ruta de salida configurada.
+            </p>
+
+            <!-- Evidencia Paso 2 -->
+            <div class="evidence-card" style="margin-top: 14px;" tabindex="0" role="button" aria-label="Ampliar captura 2: resultado de ip route">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura2_gateway.png" alt="Captura 2: Salida de ip route mostrando ruta por defecto via 10.0.2.2" loading="lazy">
+                <div class="zoom-overlay">🔍 Ampliar captura</div>
+              </div>
+              <div class="evidence-info">
+                <h4>Evidencia — Salida de <code>ip route</code></h4>
+                <p>Ruta por defecto <code>default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100</code>. El gateway NAT de VirtualBox está operativo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="card-badge">PASO 03</span>
+              <h3 style="font-size: 1.15rem; color: #fff; margin: 0;">Auditoría de Servidores DNS</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 12px;">
+              Se consultó el archivo del sistema <code>/etc/resolv.conf</code> para identificar los servidores resolutores de nombres configurados.
+            </p>
+
+
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-top: 10px;">
+              El archivo es gestionado por <code>NetworkManager</code> y se sobreescribe automáticamente. El servidor DNS indicado (<code>192.168.100.1</code>) no pertenece al segmento virtual <code>10.0.2.0/24</code>; corresponde al gateway físico de la red del host, cuya dirección propaga VirtualBox a la VM a través del mecanismo NAT.
+            </p>
+
+            <!-- Evidencia Paso 3 -->
+            <div class="evidence-card" style="margin-top: 14px;" tabindex="0" role="button" aria-label="Ampliar captura 3: contenido de /etc/resolv.conf">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura3_dns.png" alt="Captura 3: Contenido de /etc/resolv.conf con nameserver 192.168.100.1" loading="lazy">
+                <div class="zoom-overlay">🔍 Ampliar captura</div>
+              </div>
+              <div class="evidence-info">
+                <h4>Evidencia — Contenido de <code>/etc/resolv.conf</code></h4>
+                <p>Archivo generado por NetworkManager. DNS primario <code>nameserver 192.168.100.1</code> (IPv4) y <code>nameserver fd17:625c:f037:2::3</code> (IPv6).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="card-badge">PASO 04</span>
+              <h3 style="font-size: 1.15rem; color: #fff; margin: 0;">Verificación de Conectividad e Integridad con ICMP</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 12px;">
+              Se ejecutó <code>ping google.com -c 4</code> para comprobar la conectividad de extremo a extremo enviando exactamente 4 solicitudes ICMP Echo Request.
+            </p>
+
+
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-top: 10px;">
+              La prueba confirma conectividad <strong>bidireccional</strong> completa: el sistema pudo resolver el nombre, enrutar los paquetes a través del NAT y recibir las respuestas ICMP Echo Reply sin pérdida. El valor TTL recibido (64) indica que los paquetes no fueron manipulados por un proxy transparente en el camino.
+            </p>
+
+            <!-- Evidencia Paso 4 -->
+            <div class="evidence-card" style="margin-top: 14px;" tabindex="0" role="button" aria-label="Ampliar captura 4: resultado de ping -c 4 google.com">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura4_ping.png" alt="Captura 4: Salida de ping -c 4 google.com con 0% de pérdida de paquetes" loading="lazy">
+                <div class="zoom-overlay">🔍 Ampliar captura</div>
+              </div>
+              <div class="evidence-info">
+                <h4>Evidencia — Salida de <code>ping -c 4 google.com</code></h4>
+                <p>Conectividad ICMP bidireccional confirmada: 0% de pérdida de paquetes hacia Internet.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 5 -->
+          <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span class="card-badge">PASO 05</span>
+              <h3 style="font-size: 1.15rem; color: #fff; margin: 0;">Análisis de Ruta de Red y Saltos</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 12px;">
+              Se ejecutó <code>traceroute google.com</code> para observar los saltos intermedios (hops) que recorren los paquetes hasta el destino.
+            </p>
+
+
+            <div style="background: rgba(14, 23, 42, 0.7); border-left: 3px solid var(--cyan-bright); padding: 12px 16px; border-radius: var(--radius-xs); margin-top: 12px;">
+              <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+                <strong>Por qué los saltos muestran <code>* * *</code>:</strong> <code>traceroute</code> en Linux envía sondas UDP hacia puertos altos (33434+) con TTL incremental. El motor NAT de VirtualBox y los firewalls intermedios descartan esas sondas o bloquean los mensajes ICMP <em>Time-to-Live Exceeded</em> (Tipo 11, Código 0) de retorno. Los asteriscos indican ausencia de respuesta a las sondas, no falta de conectividad: la prueba con <code>ping</code> del paso anterior ya confirmó que el enlace hacia Google es completamente funcional.
+              </p>
+            </div>
+
+            <!-- Evidencia Paso 5 -->
+            <div class="evidence-card" style="margin-top: 14px;" tabindex="0" role="button" aria-label="Ampliar captura 5: resultado de traceroute google.com">
+              <div class="evidence-thumb-wrap">
+                <img src="./capturas/captura5_traceroute.png" alt="Captura 5: Salida de traceroute google.com — hop 1 en 10.0.2.2, saltos 2-24 con * * *" loading="lazy">
+                <div class="zoom-overlay">🔍 Ampliar captura</div>
+              </div>
+              <div class="evidence-info">
+                <h4>Evidencia — Salida de <code>traceroute google.com</code></h4>
+                <p>Salto 1: <code>10.0.2.2</code> responde (~1.2 ms). Saltos 2–24: <code>* * *</code> por filtrado de sondas UDP/ICMP en el motor NAT de VirtualBox.</p>
+              </div>
+            </div>
+          </div>
+
         </article>
 
-        <!-- Bloque de Conclusiones -->
-        <article class="content-block">
-          <h2>🧠 Aprendizajes Clave &amp; Aplicabilidad en Seguridad</h2>
-          <p>
-            Este laboratorio sienta las bases técnicas fundamentales para cualquier rol de defensa o análisis en ciberseguridad:
+        <!-- 4. Índice de Evidencias -->
+        <article class="content-block" id="evidencias">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+            Índice de Evidencias Documentadas
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem;">
+            Las cinco capturas originales están integradas en cada paso del procedimiento. Usa los enlaces siguientes para ir directamente a la evidencia de cada comando:
           </p>
-          <ul class="check-list">
-            <li><span class="check-icon">✓</span> <span><strong>Comprensión de NAT y direccionamiento RFC 1918:</strong> Esencial para rastrear artefactos y diferenciar direcciones privadas de IP públicas en incidentes de red.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Diagnóstico rápido de conectividad:</strong> Saber identificar si una caída o anomalía proviene de resolución DNS, falla de enrutamiento o bloqueo ICMP.</span></li>
-            <li><span class="check-icon">✓</span> <span><strong>Fundamento para Analistas SOC:</strong> Entender la topología de red local antes de analizar alertas de tráfico malicioso, escaneos o intentos de exfiltración.</span></li>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; font-size: 0.9rem;">
+            <li>
+              <a href="#procedimiento" style="color: var(--cyan-bright); text-decoration: none;">↳ Paso 1 — <code>ip a</code></a>
+              <span style="color: var(--text-muted); margin-left: 6px;">Interfaz eth0, IP 10.0.2.15/24, MAC 08:00:27:8a:35:d2</span>
+            </li>
+            <li>
+              <a href="#procedimiento" style="color: var(--cyan-bright); text-decoration: none;">↳ Paso 2 — <code>ip route</code></a>
+              <span style="color: var(--text-muted); margin-left: 6px;">Ruta por defecto via 10.0.2.2 (gateway NAT)</span>
+            </li>
+            <li>
+              <a href="#procedimiento" style="color: var(--cyan-bright); text-decoration: none;">↳ Paso 3 — <code>cat /etc/resolv.conf</code></a>
+              <span style="color: var(--text-muted); margin-left: 6px;">DNS 192.168.100.1 (IPv4), fd17:625c:f037:2::3 (IPv6)</span>
+            </li>
+            <li>
+              <a href="#procedimiento" style="color: var(--cyan-bright); text-decoration: none;">↳ Paso 4 — <code>ping -c 4 google.com</code></a>
+              <span style="color: var(--text-muted); margin-left: 6px;">4/4 paquetes, 0% pérdida, RTT prom. 6.50 ms</span>
+            </li>
+            <li>
+              <a href="#procedimiento" style="color: var(--cyan-bright); text-decoration: none;">↳ Paso 5 — <code>traceroute google.com</code></a>
+              <span style="color: var(--text-muted); margin-left: 6px;">Hop 1: 10.0.2.2 · Hops 2–24: * * * (filtrado NAT)</span>
+            </li>
           </ul>
         </article>
+
+        <!-- 5. Conclusiones y Limitaciones -->
+        <article class="content-block" id="conclusiones">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            Conclusiones, Limitaciones y Aplicabilidad
+          </h2>
+
+          <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 8px;">Conclusiones del Laboratorio</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.92rem;">
+            Se comprobaron experimentalmente los pilares fundamentales del networking en Linux: la asignación dinámica de parámetros mediante DHCP en un segmento privado RFC 1918 (<code>10.0.2.0/24</code>), el papel del Gateway virtual (<code>10.0.2.2</code>) como intermediario hacia redes externas, la resolución de nombres DNS y la comprobación de conectividad sin pérdida mediante ICMP.
+          </p>
+
+          <h3 style="font-size: 1.05rem; color: #fff; margin-top: 20px; margin-bottom: 8px;">Limitaciones de las Pruebas Realizadas</h3>
+          <ul class="check-list">
+            <li>
+              <span class="check-icon">•</span>
+              <span><strong>Aislamiento NAT no equivale a seguridad perimetral total:</strong> La máquina virtual accede a Internet a través de la IP del host y no es directamente accesible desde la red local externa sin reenvío de puertos (Port Forwarding), pero esto constituye una propiedad de la arquitectura NAT, no una política de seguridad o cortafuegos auditada.</span>
+            </li>
+            <li>
+              <span class="check-icon">•</span>
+              <span><strong>Pruebas en capa 3 y 4 básicas:</strong> No se analizaron protocolos de nivel superior ni reglas de inspección profunda de tráfico (lo cual se aborda en el Laboratorio 02 con Wireshark).</span>
+            </li>
+            <li>
+              <span class="check-icon">•</span>
+              <span><strong>Restricciones de traceroute en NAT:</strong> El comportamiento observado evidencia que las herramientas de diagnóstico basadas en sondas UDP pueden verse condicionadas por la emulación de red del hipervisor.</span>
+            </li>
+          </ul>
+
+          <h3 style="font-size: 1.05rem; color: #fff; margin-top: 20px; margin-bottom: 8px;">Aplicabilidad en Roles de Ciberseguridad</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.92rem;">
+            Para analistas en Centros de Operaciones de Seguridad (SOC) y roles de Blue Team, dominar estos diagnósticos desde la consola de comandos permite descartar rápidamente falsas alertas de caída de servicio, identificar direcciones de origen privadas frente a públicas en trazas de eventos, y validar la ruta de paquetes antes de iniciar tareas de captura o mitigación de incidentes.
+          </p>
+        </article>
+
       </section>
 
-      <!-- Sidebar -->
+
+      <!-- =====================================================================
+           COLUMNA LATERAL (Sidebar)
+           ===================================================================== -->
       <aside class="detail-sidebar">
+
+        <!-- Ficha Técnica Resumida -->
         <div class="sidebar-card">
-          <h3>Ficha del Laboratorio</h3>
+          <h3>Ficha Técnica del Laboratorio</h3>
           <table class="meta-table">
             <tbody>
               <tr>
-                <td>Código</td>
-                <td>LAB-01</td>
+                <td class="meta-label">Código</td>
+                <td class="meta-val">LAB-01</td>
               </tr>
               <tr>
-                <td>Sistema</td>
-                <td>Kali Linux (VM)</td>
+                <td class="meta-label">Plataforma</td>
+                <td class="meta-val">Kali Linux (VirtualBox)</td>
               </tr>
               <tr>
-                <td>Red</td>
-                <td>NAT Privado</td>
+                <td class="meta-label">Modo de Red</td>
+                <td class="meta-val">NAT Privada (RFC 1918)</td>
               </tr>
               <tr>
-                <td>Herramientas</td>
-                <td>ip, ping, traceroute</td>
+                <td class="meta-label">IP Asignada</td>
+                <td class="meta-val">10.0.2.15 / 24</td>
               </tr>
               <tr>
-                <td>Evidencias</td>
-                <td>5 Capturas PNG</td>
+                <td class="meta-label">Gateway</td>
+                <td class="meta-val">10.0.2.2</td>
               </tr>
               <tr>
-                <td>Documento</td>
-                <td>informe.pdf (58 KB)</td>
+                <td class="meta-label">Servidor DNS</td>
+                <td class="meta-val">192.168.100.1</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Herramientas</td>
+                <td class="meta-val">ip, ping, traceroute</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Evidencias</td>
+                <td class="meta-val">5 Capturas Interactivas</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Estado</td>
+                <td class="meta-val" style="color: var(--accent-emerald-bright);">✓ Documentado</td>
               </tr>
             </tbody>
           </table>
         </div>
 
+        <!-- Índice de Navegación Rápida Interna -->
         <div class="sidebar-card">
-          <h3>Descarga del Informe</h3>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
-            El informe completo incluye el análisis paso a paso, interpretación de resultados y consideraciones técnicas.
-          </p>
-          <a href="./informe.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: 100%; justify-content: center;">
-            Descargar PDF
-          </a>
+          <h3>Índice del Laboratorio</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+            <li><a href="#objetivos" style="color: var(--text-secondary);">1. Objetivos y Alcance</a></li>
+            <li><a href="#entorno" style="color: var(--text-secondary);">2. Entorno y Parámetros</a></li>
+            <li><a href="#procedimiento" style="color: var(--text-secondary);">3. Procedimiento y Comandos</a></li>
+            <li><a href="#evidencias" style="color: var(--text-secondary);">4. Índice de Evidencias</a></li>
+            <li><a href="#conclusiones" style="color: var(--text-secondary);">5. Conclusiones y Límites</a></li>
+          </ul>
         </div>
 
+        <!-- Navegación entre Proyectos del Portafolio -->
         <div class="sidebar-card">
           <h3>Navegación del Portafolio</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
@@ -258,16 +472,21 @@
             <li><a href="../02-Wireshark-Traffic-Analysis/index.html">• Lab 02: Análisis Wireshark →</a></li>
           </ul>
         </div>
+
       </aside>
+
     </div>
   </main>
 
-  <!-- Footer -->
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-info">
-        <h4>Johan González · Cybersecurity Portfolio</h4>
-        <p>Laboratorios técnicos prácticos de redes, monitoreo y seguridad de la información.</p>
+        <h4>Johan González · Portafolio de Ciberseguridad</h4>
+        <p>Laboratorios técnicos prácticos de redes, análisis de tráfico y seguridad de la información.</p>
       </div>
       <div class="footer-links">
         <a href="../index.html">Inicio</a>
