@@ -1391,6 +1391,316 @@ section[id],
 }
 
 /* --------------------------------------------------------------------------
+   12b. Ficha de Registro de Riesgos GRC (AndesPay)
+   -------------------------------------------------------------------------- */
+.callout-disclaimer {
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-left: 4px solid var(--accent-amber-bright);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  backdrop-filter: blur(10px);
+}
+
+.callout-disclaimer-icon {
+  color: var(--accent-amber-bright);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.callout-disclaimer h4 {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--accent-amber-bright);
+  margin-bottom: 6px;
+}
+
+.callout-disclaimer p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.concept-card {
+  background: rgba(14, 23, 42, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-card:hover {
+  border-color: var(--cyan-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.concept-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.concept-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+}
+
+.concept-pill.riesgo {
+  background: rgba(244, 63, 94, 0.15);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.concept-pill.control {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald-bright);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.concept-pill.hallazgo {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber-bright);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.concept-pill.incidente {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.concept-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.concept-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.concept-example {
+  background: rgba(5, 8, 17, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: var(--radius-xs);
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.concept-example strong {
+  color: var(--text-secondary);
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+/* Ficha destacada de Registro de Riesgo */
+.risk-card-full {
+  background: linear-gradient(180deg, rgba(14, 23, 42, 0.95) 0%, rgba(9, 15, 29, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-top: 3px solid var(--cyan-bright);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.risk-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.risk-title-group h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 8px;
+}
+
+.risk-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber-bright);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.risk-status-tag .pulse-dot {
+  background-color: var(--accent-amber-bright);
+  box-shadow: 0 0 8px var(--accent-amber-bright);
+}
+
+.risk-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .risk-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.risk-field-box {
+  background: rgba(11, 19, 36, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+}
+
+.risk-field-box.accent-border {
+  border-left: 3px solid var(--cyan-bright);
+}
+
+.risk-field-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.risk-field-label svg {
+  color: var(--cyan-bright);
+}
+
+.risk-field-value {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.risk-field-value strong {
+  color: var(--text-primary);
+}
+
+.risk-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.risk-pill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.risk-pill-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-amber-bright);
+}
+
+.control-pill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.control-pill-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent-emerald-bright);
+}
+
+.risk-eval-box {
+  background: rgba(5, 8, 17, 0.75);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.risk-eval-box svg {
+  color: var(--accent-amber-bright);
+  flex-shrink: 0;
+}
+
+.risk-eval-box p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.risk-eval-box p strong {
+  color: var(--accent-amber-bright);
+}
+
+.future-placeholder {
+  border: 1px dashed rgba(148, 163, 184, 0.2);
+  background: rgba(14, 23, 42, 0.4);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+
+.future-placeholder:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+/* --------------------------------------------------------------------------
    13. Footer
    -------------------------------------------------------------------------- */
 .site-footer {

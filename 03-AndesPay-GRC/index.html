@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caso de estudio AndesPay: Gestión de riesgos GRC en una fintech ficticia de pagos digitales. Registro R-01 sobre alteración no autorizada de transacciones. Portafolio de Ciberseguridad de Johan González.">
+  <title>AndesPay — Gestión de Riesgos GRC · Portafolio de Ciberseguridad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       HEADER / Barra de Navegación
+       ===================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="brand-title">CYBERSECURITY<span>.PORTFOLIO</span></div>
+      </a>
+
+      <nav>
+        <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="../index.html#laboratorios" class="nav-link">Laboratorios</a></li>
+          <li><a href="../index.html#grc" class="nav-link active">GRC</a></li>
+          <li><a href="../index.html#contacto" class="nav-link">Contacto</a></li>
+          <li>
+            <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer" class="btn-github" aria-label="Ver repositorio en GitHub (abre en nueva pestaña)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       CONTENEDOR PRINCIPAL
+       ===================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- Migas de Pan -->
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <a href="../index.html">← Portafolio Principal</a>
+      <span>/</span>
+      <span style="color: var(--cyan-bright);">03-AndesPay-GRC</span>
+    </nav>
+
+    <!-- Cabecera del Caso de Estudio -->
+    <header class="project-detail-header">
+      <div class="header-badges">
+        <span class="card-badge">CASO 03 · GOBERNANZA &amp; GESTIÓN DE RIESGOS</span>
+        <span class="status-badge simulated" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-amber-bright); border-color: rgba(245, 158, 11, 0.35);">⚙ Fase 1 · Registro R-01</span>
+        <span class="card-badge" style="color: #cbd5e1; border-color: var(--border-subtle);">Fintech Ficticia · Ejercicio Académico</span>
+      </div>
+      <h1>AndesPay — Gestión de Riesgos GRC</h1>
+      <p class="project-lead">
+        Primer avance del caso de estudio metodológico de Gobernanza, Riesgo y Cumplimiento (GRC) aplicado a una plataforma fintech ficticia de pagos digitales. Este documento presenta la contextualización del entorno simulado, el primer registro de riesgo formal (R-01) y la diferenciación conceptual entre los pilares de la gestión de seguridad.
+      </p>
+      <div class="header-cta-row">
+        <a href="#registro-r01" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          </svg>
+          Ver Registro de Riesgo R-01
+        </a>
+        <a href="#conceptos" class="btn-secondary">
+          Marco Conceptual GRC
+        </a>
+      </div>
+    </header>
+
+    <!-- Nota Visible de Caso Académico Ficticio -->
+    <div class="callout-disclaimer" role="note" aria-label="Aviso de caso académico ficticio">
+      <div class="callout-disclaimer-icon" aria-hidden="true">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <div>
+        <h4>Nota de Caso Académico Ficticio</h4>
+        <p>
+          <strong>AndesPay</strong> es una empresa completamente ficticia utilizada con propósitos didácticos y formativos para estudiar Gobierno, Riesgo y Cumplimiento (GRC) en ciberseguridad. Todos los escenarios de riesgo, activos, supuestos técnicos y controles analizados son puramente hipotéticos. No corresponden a hallazgos, auditorías, vulnerabilidades ni operaciones de ninguna entidad financiera o empresa del mundo real.
+        </p>
+      </div>
+    </div>
+
+    <!-- Disposición en Grilla (Contenido Principal + Sidebar) -->
+    <div class="detail-grid">
+
+      <!-- Columna Principal -->
+      <section class="detail-main">
+
+        <!-- 1. Contexto del Caso AndesPay -->
+        <article class="content-block" id="contexto">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+            1. Contexto del Caso AndesPay
+          </h2>
+          <p>
+            En el ecosistema financiero actual, las instituciones de tecnología financiera (Fintech) procesan volúmenes crecientes de transacciones monetarias críticas en tiempo real. Esta posición en la cadena de valor digital las convierte en un blanco de alto interés para actores de amenaza que buscan beneficios económicos directos o la desestabilización de servicios.
+          </p>
+
+          <div style="background: rgba(11, 19, 36, 0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 18px 20px; margin: 18px 0;">
+            <h4 style="color: var(--cyan-bright); font-size: 0.95rem; margin-bottom: 8px;">Perfil Operacional Simulado de AndesPay:</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+              <li><strong style="color: #fff;">• Modelo de negocio:</strong> Plataforma de pagos digitales, procesamiento de transferencias interbancarias y billeteras electrónicas.</li>
+              <li><strong style="color: #fff;">• Arquitectura tecnológica:</strong> Microservicios en la nube, APIs REST de autorización y bases de datos transaccionales de alta concurrencia.</li>
+              <li><strong style="color: #fff;">• Enfoque de seguridad:</strong> Establecimiento de una línea base de gestión de riesgos alineada a principios de ISO/IEC 27001 y el marco NIST CSF.</li>
+            </ul>
+          </div>
+
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+            El objetivo de este caso de estudio es ejercitar el proceso formal de identificación, análisis y tratamiento de riesgos de ciberseguridad sin asumir conclusiones apresuradas, documentando cada componente con rigor técnico y criterio metodológico.
+          </p>
+        </article>
+
+        <!-- 2. Marco Conceptual GRC -->
+        <article class="content-block" id="conceptos">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            2. Diferenciación Conceptual de GRC
+          </h2>
+          <p>
+            Uno de los errores más comunes en la práctica de la seguridad de la información es confundir conceptos operativos y de gobernanza. Para abordar el caso de forma profesional, se delimitan formalmente cuatro conceptos clave:
+          </p>
+
+          <div class="concept-grid">
+
+            <!-- Concepto 1: Riesgo -->
+            <div class="concept-card">
+              <div class="concept-card-top">
+                <span class="concept-pill riesgo">Potencial</span>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #fb7185;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+              </div>
+              <h3>Riesgo</h3>
+              <p>
+                La posibilidad de que una amenaza aproveche una vulnerabilidad existente en un activo, provocando un impacto adverso en los objetivos o activos de la organización. Es una probabilidad futura, no una certeza.
+              </p>
+              <div class="concept-example">
+                <strong>Ejemplo en AndesPay:</strong>
+                Posibilidad de que credenciales administrativas sean robadas y utilizadas para alterar montos transaccionales.
+              </div>
+            </div>
+
+            <!-- Concepto 2: Control -->
+            <div class="concept-card">
+              <div class="concept-card-top">
+                <span class="concept-pill control">Mitigación</span>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-emerald-bright);">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h3>Control</h3>
+              <p>
+                Medida, política, procedimiento o mecanismo técnico diseñado para modificar el nivel de riesgo, reduciendo su probabilidad de ocurrencia o amortiguando su impacto potencial.
+              </p>
+              <div class="concept-example">
+                <strong>Ejemplo en AndesPay:</strong>
+                Exigir Autenticación Multifactor (MFA) obligatoria y segregación de funciones para acceso a la base de datos.
+              </div>
+            </div>
+
+            <!-- Concepto 3: Hallazgo -->
+            <div class="concept-card">
+              <div class="concept-card-top">
+                <span class="concept-pill hallazgo">Auditoría</span>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-amber-bright);">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 8v6M8 11h6"/>
+                </svg>
+              </div>
+              <h3>Hallazgo</h3>
+              <p>
+                Conclusión o evidencia objetiva detectada durante una evaluación, revisión o auditoría de seguridad que denota una desviación, debilidad o incumplimiento frente a una norma o política interna.
+              </p>
+              <div class="concept-example">
+                <strong>Ejemplo en AndesPay:</strong>
+                Constatar durante una revisión que tres cuentas de desarrollo poseen permisos directos de escritura en producción.
+              </div>
+            </div>
+
+            <!-- Concepto 4: Incidente -->
+            <div class="concept-card">
+              <div class="concept-card-top">
+                <span class="concept-pill incidente">Materializado</span>
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #c084fc;">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3>Incidente</h3>
+              <p>
+                Evento de seguridad adverso que ya ha ocurrido o se encuentra en curso, el cual compromete de forma tangible la confidencialidad, integridad o disponibilidad de la información o los sistemas.
+              </p>
+              <div class="concept-example">
+                <strong>Ejemplo en AndesPay:</strong>
+                Un atacante ejecutó una modificación ilícita en 150 registros transaccionales tras vulnerar una credencial sin MFA.
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 3. Registro de Riesgo R-01 -->
+        <article class="content-block" id="registro-r01">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+              <line x1="7" y1="8" x2="17" y2="8"></line>
+              <line x1="7" y1="12" x2="17" y2="12"></line>
+              <line x1="7" y1="16" x2="13" y2="16"></line>
+            </svg>
+            3. Registro de Riesgo: R-01
+          </h2>
+          <p>
+            A continuación se presenta la tarjeta formal del primer riesgo identificado para el entorno de pagos digitales de AndesPay. La estructura diferencia nítidamente cada dimensión del análisis:
+          </p>
+
+          <!-- Ficha de Registro R-01 -->
+          <div class="risk-card-full" aria-labelledby="r01-heading">
+
+            <div class="risk-header-row">
+              <div class="risk-title-group">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span class="card-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-bright); border-color: rgba(34, 211, 238, 0.35);">REGISTRO R-01</span>
+                  <span style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">Activo Crítico: Nivel 1</span>
+                </div>
+                <h3 id="r01-heading">Alteración no autorizada de transacciones</h3>
+              </div>
+              <div>
+                <span class="risk-status-tag">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span>Riesgo identificado · Evaluación pendiente</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Fila 1: Activo y Escenario -->
+            <div class="risk-grid-two">
+
+              <div class="risk-field-box accent-border">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                  <span>Activo Afectado</span>
+                </div>
+                <div class="risk-field-value">
+                  <strong>Base de datos de transacciones</strong>
+                  <p style="margin-top: 6px; font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0;">
+                    Repositorio primario donde se almacenan y persisten los historiales de transferencias, estados de pago y saldos de las cuentas en la plataforma AndesPay.
+                  </p>
+                </div>
+              </div>
+
+              <div class="risk-field-box accent-border">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                  <span>Escenario de Riesgo</span>
+                </div>
+                <div class="risk-field-value">
+                  <strong>Acceso abusivo mediante credenciales comprometidas</strong>
+                  <p style="margin-top: 6px; font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 0;">
+                    Un actor de amenaza podría obtener y utilizar credenciales legítimas comprometidas (por robo, reutilización o ingeniería social) para acceder a la base de datos y alterar o falsificar registros transaccionales.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Fila 2: Impactos y Controles -->
+            <div class="risk-grid-two">
+
+              <div class="risk-field-box">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+                  </svg>
+                  <span>Impacto Potencial</span>
+                </div>
+                <div class="risk-pill-list">
+                  <div class="risk-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span><strong>Pérdidas económicas:</strong> Saldo alterado o transferencias ilícitas que derivan en desembolsos monetarios indebidos.</span>
+                  </div>
+                  <div class="risk-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span><strong>Errores de conciliación:</strong> Descuadre contable y operacional entre los registros internos de la fintech y las entidades bancarias aliadas.</span>
+                  </div>
+                  <div class="risk-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span><strong>Pérdida de trazabilidad:</strong> Inconsistencia en las bitácoras que dificulta la auditoría forense y la reconstrucción cronológica de los hechos.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="risk-field-box">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                  <span>Controles por Evaluar (Candidatos)</span>
+                </div>
+                <div class="risk-pill-list">
+                  <div class="control-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Autenticación multifactor (MFA):</strong> Aplicación estricta para todo acceso a interfaces administrativas, terminales de soporte y consolas de base de datos.</span>
+                  </div>
+                  <div class="control-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Gestión de privilegios (Principio de Menor Privilegio):</strong> Restricción granular de permisos de modificación directa en producción y política de cuentas segregadas.</span>
+                  </div>
+                  <div class="control-pill-item">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span><strong>Monitoreo de accesos y auditoría de consultas:</strong> Detección temprana y alerta en tiempo real ante consultas directas inusuales o alteraciones en tablas maestras.</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Fila 3: Estado Metodológico, Evidencia y Tratamiento -->
+            <div class="risk-grid-two" style="margin-bottom: 0;">
+
+              <div class="risk-field-box">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+                  </svg>
+                  <span>Evidencia Técnica Asociada</span>
+                </div>
+                <div class="risk-field-value">
+                  <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-amber-bright); font-weight: 600; font-size: 0.86rem;">
+                    <span class="pulse-dot" style="background-color: var(--accent-amber-bright); box-shadow: 0 0 6px var(--accent-amber-bright);" aria-hidden="true"></span>
+                    Pendiente de recopilación
+                  </span>
+                  <p style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+                    Las configuraciones de acceso, diagramas de arquitectura de base de datos y registros simulados serán recopilados y adjuntados durante las fases prácticas subsiguientes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="risk-field-box">
+                <div class="risk-field-label">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                  </svg>
+                  <span>Estrategia de Tratamiento</span>
+                </div>
+                <div class="risk-field-value">
+                  <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-amber-bright); font-weight: 600; font-size: 0.86rem;">
+                    <span class="pulse-dot" style="background-color: var(--accent-amber-bright); box-shadow: 0 0 6px var(--accent-amber-bright);" aria-hidden="true"></span>
+                    Pendiente de definición
+                  </span>
+                  <p style="margin-top: 6px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+                    La decisión formal de tratamiento (mitigar, transferir, aceptar o evitar) dependerá del cálculo del riesgo residual una vez evaluada la efectividad de los controles y contrastada con el apetito de riesgo institucional.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Banner Explicativo: Puntuación de Probabilidad e Impacto Pendiente -->
+            <div class="risk-eval-box" role="status" aria-label="Estado de la metodología de evaluación">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <p>
+                <strong>Puntuación de Probabilidad e Impacto: No asignada aún.</strong>
+                En estricto apego al marco metodológico, no se han asignado calificaciones numéricas arbitrarias a este registro. La escala formal de evaluación cualitativa/cuantitativa, los criterios de severidad y la matriz de cálculo se definirán en la siguiente fase antes de estimar el nivel de riesgo inherente.
+              </p>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- 4. Preparación para Futuros Registros y Roadmap -->
+        <article class="content-block" id="proximos-pasos">
+          <h2>
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--cyan-bright); flex-shrink: 0;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+            4. Estructura para Futuros Registros y Fases del Caso
+          </h2>
+          <p>
+            La matriz del caso AndesPay está diseñada con arquitectura modular para admitir la incorporación progresiva de nuevos activos y escenarios de riesgo conforme avance el ejercicio:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 18px;">
+
+            <div class="future-placeholder">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="card-badge" style="border-color: rgba(148, 163, 184, 0.25); color: var(--text-muted);">SLOT R-02</span>
+                <span>Fuga o interceptación de datos de tarjetahabientes en tránsito (API de Pagos)</span>
+              </div>
+              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-amber-bright);">[Próximo registro]</span>
+            </div>
+
+            <div class="future-placeholder">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="card-badge" style="border-color: rgba(148, 163, 184, 0.25); color: var(--text-muted);">SLOT R-03</span>
+                <span>Indisponibilidad de pasarela de pago por ataque de denegación de servicio (DDoS)</span>
+              </div>
+              <span style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-amber-bright);">[Próximo registro]</span>
+            </div>
+
+          </div>
+
+          <h3 style="font-size: 1.05rem; color: #fff; margin-top: 26px; margin-bottom: 12px;">Roadmap Metodológico del Caso AndesPay</h3>
+          <ul class="check-list">
+            <li>
+              <span class="check-icon" style="color: var(--accent-amber-bright);">⚙</span>
+              <span><strong>Fase 1 (Avance actual):</strong> Contextualización del entorno fintech, definición conceptual y levantamiento del primer registro R-01.</span>
+            </li>
+            <li>
+              <span class="check-icon" style="color: var(--text-muted);">○</span>
+              <span><strong>Fase 2 (Próxima actividad):</strong> Definición de la metodología de evaluación (criterios de probabilidad e impacto) y cálculo de riesgo inherente.</span>
+            </li>
+            <li>
+              <span class="check-icon" style="color: var(--text-muted);">○</span>
+              <span><strong>Fase 3 (Actividad posterior):</strong> Selección formal de controles mitigantes según ISO/IEC 27001 Anexo A y evaluación del riesgo residual.</span>
+            </li>
+          </ul>
+        </article>
+
+      </section>
+
+      <!-- =====================================================================
+           COLUMNA LATERAL (Sidebar)
+           ===================================================================== -->
+      <aside class="detail-sidebar">
+
+        <!-- Ficha Técnica Resumida -->
+        <div class="sidebar-card">
+          <h3>Ficha Técnica del Caso</h3>
+          <table class="meta-table">
+            <tbody>
+              <tr>
+                <td class="meta-label">Organización</td>
+                <td class="meta-val">AndesPay (Ficticia)</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Industria</td>
+                <td class="meta-val">Fintech / Pagos Digitales</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Enfoque</td>
+                <td class="meta-val">GRC / ISO 27001 / NIST</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Fase Actual</td>
+                <td class="meta-val">Fase 1 · Identificación</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Registros</td>
+                <td class="meta-val">1 Identificado (R-01)</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Evaluación</td>
+                <td class="meta-val" style="color: var(--accent-amber-bright);">Metodología Pendiente</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Evidencia</td>
+                <td class="meta-val" style="color: var(--accent-amber-bright);">Pendiente Recopilación</td>
+              </tr>
+              <tr>
+                <td class="meta-label">Naturaleza</td>
+                <td class="meta-val" style="color: var(--cyan-bright);">Ejercicio Académico</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Índice de Navegación Interna -->
+        <div class="sidebar-card">
+          <h3>Índice del Documento</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem;">
+            <li><a href="#contexto" style="color: var(--text-secondary);">1. Contexto del Caso AndesPay</a></li>
+            <li><a href="#conceptos" style="color: var(--text-secondary);">2. Marco Conceptual GRC</a></li>
+            <li><a href="#registro-r01" style="color: var(--text-secondary);">3. Registro de Riesgo: R-01</a></li>
+            <li><a href="#proximos-pasos" style="color: var(--text-secondary);">4. Estructura y Roadmap</a></li>
+          </ul>
+        </div>
+
+        <!-- Navegación entre Proyectos del Portafolio -->
+        <div class="sidebar-card">
+          <h3>Navegación del Portafolio</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem;">
+            <li><a href="../index.html" style="color: var(--text-secondary);">← Portafolio General</a></li>
+            <li><a href="../01-Descubriendo-Mi-Red/index.html" style="color: var(--text-secondary);">• Lab 01: Descubriendo Mi Red</a></li>
+            <li><a href="../02-Wireshark-Traffic-Analysis/index.html" style="color: var(--text-secondary);">• Lab 02: Análisis Wireshark</a></li>
+            <li><strong style="color: var(--cyan-bright);">• Caso 03: AndesPay GRC (Activo)</strong></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>Johan González · Portafolio de Ciberseguridad</h4>
+        <p>Gobernanza, Gestión de Riesgos y Cumplimiento (GRC). Caso académico ficticio AndesPay.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Inicio</a>
+        <a href="../index.html#laboratorios">Laboratorios</a>
+        <a href="../index.html#grc">GRC</a>
+        <a href="../index.html#contacto">Contacto</a>
+        <a href="https://github.com/Johan-Gallegoss/cybersecurity-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
